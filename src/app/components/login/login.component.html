@@ -1,0 +1,66 @@
+<div class="cont">
+    <div class="top">
+
+    </div>
+    <div class="middle">
+        <div class="left">
+
+        </div>
+        <div class="center">
+            <img src="../../../../assets/images/login.jpg" class="img" width="100%" height="100%">
+            <div class="form">
+
+                <form class="form" [formGroup]="form" (ngSubmit)="onSubmit()">
+                    <div class="line"></div>
+                    <div class="lineTop">
+                        <h3>SING IN</h3>
+                    </div>
+                    <div class="lineTop">
+                        <h1>WELCOME</h1>
+                    </div>
+                    <div class="line"></div>
+                    <div class="line">
+                        <mat-form-field>
+                            <input class="input" matInput placeholder="Usuario" formControlName="username">
+                            <mat-error
+                                *ngIf="(registerFormControl.username.touched || submitted) && registerFormControl.username.errors?.required">
+                                Campo <strong>requerido.</strong>
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+
+                    <div class="line">
+                        <mat-form-field>
+                            <input class="input" matInput placeholder="Contraseña nueva"
+                                [type]="visiblePassword ? 'password' : 'text'" formControlName="password">
+
+                            <mat-error
+                                *ngIf="(registerFormControl.password.touched || submitted) && registerFormControl.password.errors?.required">
+                                Campo <strong>requerido.</strong>
+                            </mat-error>
+                            <mat-error
+                                *ngIf="registerFormControl.password.touched && registerFormControl.password.errors?.invalidPassword">
+
+                                <strong>Mínimo 8 caracteres, al menos una letra mayúscula, una letra minúscula, un
+                                    número y
+                                    un
+                                    caracter.</strong>
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+
+                    <div class="buttons">
+                        <button id="validateBtn" mat-button type="submit" pButton pRipple label="Guardar"
+                            icon="pi pi-check" class="p-button-text">Sing In</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="right">
+
+        </div>
+    </div>
+    <div class="food">
+
+    </div>
+</div>
